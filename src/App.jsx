@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import GameProjects from './pages/GameProjects'
 import LandingPage from './pages/LandingPage'
 import Topbar from './components/Topbar'
-import PageBackground from './components/PageBackground'
+import PageBackground from './components/Pagebackground'
 import FullStack from './pages/FullStack'
 import Resume from './pages/Resume'
 import SuperheroUnity from "./pages/unity-projects/superhero-unity";
