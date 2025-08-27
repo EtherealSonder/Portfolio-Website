@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&display=swap');
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: rgba(40, 40, 40, 0.5);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nav-logo {
+    height: 40px;
+    cursor: pointer;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+}
+
+    .nav-links li {
+        color: white;
+        cursor: pointer;
+        padding: 0.4rem 1rem;
+        border-radius: 999px;
+        transition: all 0.3s ease;
+    }
+
+        .nav-links li.active {
+            background: black;
+            color: white;
+            font-weight: 600;
+        }
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-icon {
+    height: 24px;
+    cursor: pointer;
+}
+
+.nav-item:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+}
+
+/* Hamburger Icon */
+.hamburger {
+    width: 28px;
+    height: 20px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+    .hamburger div {
+        width: 100%;
+        height: 3px;
+        background: white;
+    }
+
+/* Side Menu */
+.side-menu {
+    position: fixed;
+    top: 70px;
+    right: 0;
+    background: rgba(20, 20, 20, 0.95);
+    padding: 1rem 2rem;
+    z-index: 1000;
+    width: 200px;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.side-link {
+    font-family: 'DM Sans', sans-serif;
+    color: white;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+    .side-link:hover {
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 6px #fff);
+    }
+
+/* Responsive Behavior */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .nav-icons {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+.desktop-only {
+    display: flex;
+}
+
+.mobile-only {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .desktop-only {
+        display: none;
+    }
+
+    .mobile-only {
+        display: flex;
+    }
+}

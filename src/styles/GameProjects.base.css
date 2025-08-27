@@ -1,0 +1,49 @@
+.projects-page {
+    font-family: 'DM Sans', sans-serif;
+    /* background removed */
+    min-height: 100vh;
+    padding: 0 1rem 3rem;
+}
+
+/* Tabs */
+.engine-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem auto 1.25rem;
+    flex-wrap: wrap;
+}
+
+.engine-btn {
+    background: white;
+    border: none;
+    border-radius: 12px;
+    padding: 0.6rem 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    /* Use Space Grotesk for the tab labels */
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+    .engine-btn img {
+        height: 20px;
+    }
+
+    .engine-btn.active {
+        background: #6ae3ff;
+        color: black;
+        font-weight: 600;
+    }
+
+    .engine-btn:focus-visible {
+        outline: 2px solid #111;
+        outline-offset: 2px;
+    }
+
+.engine-body {
+    width: 100%;
+}

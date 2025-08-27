@@ -1,0 +1,37 @@
+.animated-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1; /* above html background but below content */
+    pointer-events: none;
+}
+
+    .animated-bg::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(-45deg, #ffffff, /* white */
+        #f5f5f5, /* light grey */
+        #ce796b, /* very light cyan */
+        #f0f0f0, /* subtle grey */
+        #0F7173
+        );
+        background-size: 400% 400%;
+        animation: gradientFlow 15s ease infinite;
+        opacity: 0.25;
+        mix-blend-mode: overlay;
+        filter: blur(14px);
+    }
+
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

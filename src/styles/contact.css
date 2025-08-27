@@ -1,0 +1,264 @@
+/* Optional: include Kulim Park for the button (only if not already loaded) */
+/* @import url('https://fonts.googleapis.com/css2?family=Kulim+Park:wght@400;600;700&display=swap'); */
+
+:root {
+    --glass-bg: rgba(255,255,255,0.55);
+    --glass-border: rgba(255,255,255,0.35);
+    --shadow: 0 10px 30px rgba(0,0,0,.10);
+    --text: #111;
+    --muted: #666;
+    --accent: #111; /* for ghost button border/fill on hover */
+    --warning: #e11d48;
+}
+
+/* --- Section layout: keep the box fully visible across sizes --- */
+.contactSection {
+    min-height: 100vh; /* allow vertical centering */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 96px 16px; /* breathing room under fixed navs */
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.heading {
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: .08em;
+    color: var(--text);
+    margin: 0 0 12px 0;
+}
+
+.decorativeLineWrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 28px;
+}
+
+.decorativeLine {
+    width: 220px;
+    height: 8px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, rgba(0,0,0,.08), rgba(0,0,0,.25), rgba(0,0,0,.08));
+}
+
+/* --- Glass form box --- */
+.glassBox {
+    backdrop-filter: blur(10px);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    padding: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+    animation: rise .35s ease both;
+}
+
+@keyframes rise {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Inputs --- */
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.inputGroup {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+    .inputGroup input,
+    .inputGroup textarea {
+        border: 1px solid rgba(0,0,0,.15);
+        border-radius: 12px;
+        background: #fff;
+        padding: 16px 14px 14px;
+        font-size: 16px;
+        line-height: 1.4;
+        color: var(--text);
+        outline: none;
+        transition: border-color .15s ease, box-shadow .15s ease;
+    }
+
+    .inputGroup textarea {
+        min-height: 160px;
+        resize: vertical;
+    }
+
+        .inputGroup input:focus,
+        .inputGroup textarea:focus {
+            border-color: rgba(0,0,0,.35);
+            box-shadow: 0 0 0 3px rgba(0,0,0,.08);
+        }
+
+    /* Floating label */
+    .inputGroup label {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        color: var(--muted);
+        pointer-events: none;
+        transition: all .12s ease;
+        background: transparent;
+        padding: 0 4px;
+    }
+
+    .inputGroup input:focus + label,
+    .inputGroup textarea:focus + label,
+    .inputGroup.filled label {
+        top: -8px;
+        font-size: 12px;
+        color: #000;
+        background: #fff;
+        border-radius: 6px;
+    }
+
+/* Message char counter */
+.charCount {
+    position: absolute;
+    bottom: 8px;
+    right: 12px;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* Warning popover */
+.warningPopup {
+    position: absolute;
+    right: 8px;
+    top: -10px;
+    transform: translateY(-100%);
+    background: #fff;
+    color: var(--warning);
+    border: 1px solid rgba(225,29,72,.25);
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 12px;
+    white-space: nowrap;
+    box-shadow: 0 6px 20px rgba(225,29,72,.08);
+}
+
+/* Submit row */
+.buttonRow {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+/* Loader */
+.loaderSpinner {
+    width: 36px;
+    height: 36px;
+    border: 3px solid rgba(0,0,0,.12);
+    border-top-color: #000;
+    border-radius: 50%;
+    animation: spin .8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Submit Button – ghost rounded rectangle; Kulim Park if available */
+.submitButton {
+    font-family: "Kulim Park", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background: transparent;
+    color: var(--text);
+    border: 1px solid #333;
+    border-radius: 999px;
+    padding: 10px 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+    .submitButton:hover {
+        background: #111;
+        color: #fff;
+    }
+
+    .submitButton[disabled] {
+        opacity: .5;
+        cursor: not-allowed;
+    }
+
+/* --- Success view --- */
+.successBox {
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
+    animation: rise .35s ease both;
+}
+
+.successGif {
+    width: 240px;
+    height: 240px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 8px;
+}
+
+.successText {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text);
+    margin: 8px 0 4px;
+}
+
+.successSubText {
+    color: var(--muted);
+    margin-bottom: 14px;
+}
+
+/* Ghost link button */
+.ghostButton {
+    background: transparent;
+    border: 1px solid #333;
+    color: var(--text);
+    padding: 10px 16px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all .2s ease;
+    font-weight: 600;
+}
+
+    .ghostButton:hover {
+        background: var(--accent);
+        color: #fff;
+    }
+
+/* --- Responsive: ensure full box stays visible on small screens --- */
+@media (max-width: 860px) {
+    .row {
+        grid-template-columns: 1fr;
+    }
+
+    .contactSection {
+        padding: 88px 12px;
+    }
+
+    .glassBox {
+        padding: 18px;
+    }
+
+    .successGif {
+        width: 200px;
+        height: 200px;
+    }
+}

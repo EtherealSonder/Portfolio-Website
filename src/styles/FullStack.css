@@ -1,0 +1,191 @@
+/* Center the whole card vertically */
+.fullstack-wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 12px;
+    font-family: 'DM Sans', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    /* NEW: make section fill viewport and center content */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Carousel row: arrows + card */
+.fs-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* ---------- Arrows (match Unity .arrow) ---------- */
+.fs-arrow {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.18s cubic-bezier(.2,.8,.2,1), box-shadow 0.18s cubic-bezier(.2,.8,.2,1);
+}
+
+    .fs-arrow img {
+        width: 56px;
+        height: 56px;
+        object-fit: contain;
+    }
+
+    .fs-arrow:hover {
+        transform: scale(1.08);
+    }
+
+    .fs-arrow:active {
+        transform: scale(0.95);
+        box-shadow: 0 0 6px rgba(0, 200, 255, 0.35);
+    }
+
+/* ---------- Card (match Unity .card) ---------- */
+.fade-slide {
+    animation: fadeSlideIn 0.28s cubic-bezier(.3,.7,.2,1);
+}
+
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Card container (unchanged) */
+.fs-card {
+    background: #fff;
+    border-radius: 16px;
+    display: flex;
+    width: 100%;
+    max-width: 900px;
+    box-shadow: 0 0 10px rgba(0,0,0,.08);
+    overflow: hidden;
+    transition: transform .4s ease;
+}
+
+/* Left: media now takes 50% */
+.fs-media {
+    width: 50%;
+    min-height: 320px; /* give it some height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f9f9f9;
+}
+
+/* Image fully covers the left half */
+.fs-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Right: content also 50% */
+.fs-content {
+    padding: 2rem;
+    width: 50%;
+}
+
+.fs-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: .5rem;
+    color: #111;
+}
+
+/* Tags / pills (reuse your colors, keep Unity spacing) */
+.fs-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem;
+    margin-bottom: 1rem;
+}
+
+.fs-pill {
+    border-radius: 999px;
+    padding: .3rem .8rem;
+    font-size: .8rem;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(0,0,0,.06);
+}
+
+/* Description */
+.fs-desc {
+    margin-bottom: 1rem;
+    line-height: 1.55;
+    color: #222;
+}
+
+/* CTA styled to match Unity .more-btn */
+.more-btn {
+    background: transparent;
+    border: 1px solid #333;
+    border-radius: 999px;
+    padding: .5rem 1rem;
+    font-size: .9rem;
+    text-decoration: none;
+    color: #111;
+    cursor: pointer;
+    transition: all .2s ease;
+    display: inline-block;
+}
+
+    .more-btn:hover {
+        background: #111;
+        color: #fff;
+    }
+
+/* ---------- Dots (match Unity .dot-nav size/colors) ---------- */
+.fs-dots {
+    margin-top: 1.2rem;
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.dot-nav {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background: #bbb;
+    border: none;
+    cursor: pointer;
+}
+
+    .dot-nav.active {
+        background: #333;
+    }
+
+/* Responsive: stack card on small screens (like Unity) */
+@media (max-width: 800px) {
+    .fs-card {
+        flex-direction: column;
+    }
+
+    .fs-media {
+        width: 100%;
+        height: 220px;
+    }
+
+    .fs-content {
+        width: 100%;
+    }
+}
