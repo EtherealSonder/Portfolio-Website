@@ -26,7 +26,7 @@ export default function LandingPage() {
     return (
         <div className="landing-container">
             <video className="landing-video" autoPlay loop muted playsInline>
-                <source src="/landingpagebg.webm" type="video/webm" />
+                <source src="/videos/landingpagebg.webm" type="video/webm" />
             </video>
 
             <div className="glass-box">

@@ -1,7 +1,6 @@
 ﻿// src/pages/unity-projects/brothers-unity.jsx
 import React, { useState } from 'react'
 import './unitygamepage.css'
-import unityLogo from '../../assets/unity-logo.png'
 
 const TAG_COLORS = {
     'C#': 'tag-blue',
@@ -52,7 +51,7 @@ export default function BrothersUnity() {
             <div className="page-header">
                 <h1>{title}</h1>
                 <div className="engine-badge">
-                    <img src={unityLogo} alt="Unity logo" className="engine-logo" />
+                    <img src="/unity-logo.png" alt="Unity logo" className="engine-logo" />
                     <span className="engine-text">Unity</span>
                 </div>
             </div>
@@ -76,7 +75,7 @@ export default function BrothersUnity() {
             {/* Buttons */}
             <div className="btn-row">
                 <a
-                    href="/src/assets/builds/brothers-unity-build.zip"
+                    href="/builds/brothers-unity-build.zip"
                     download
                     className="download-btn"
                 >
@@ -99,7 +98,7 @@ export default function BrothersUnity() {
                     {screenshots.map((s, i) => (
                         <img
                             key={i}
-                            src={`/src/assets/unity/brothers-unity/${s}`}
+                            src={`/unity/brothers-unity/${s}`}
                             alt={`Screenshot ${i + 1}`}
                             onClick={() => setLightboxIndex(i)}
                         />
@@ -122,7 +121,7 @@ export default function BrothersUnity() {
                         ‹
                     </button>
                     <img
-                        src={`/src/assets/unity/brothers-unity/${screenshots[lightboxIndex]}`}
+                        src={`/unity/brothers-unity/${screenshots[lightboxIndex]}`}
                         alt={`Screenshot ${lightboxIndex + 1}`}
                     />
                     <button

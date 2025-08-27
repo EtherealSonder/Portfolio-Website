@@ -1,7 +1,6 @@
 ﻿// src/pages/unity-projects/kimgsburger-unity.jsx
 import React, { useState } from 'react'
 import './unitygamepage.css'
-import unityLogo from '../../assets/unity-logo.png'
 
 const TAG_COLORS = {
     'C#': 'tag-blue',
@@ -67,7 +66,7 @@ export default function KimgsburgerUnity() {
             <div className="page-header">
                 <h1>{title}</h1>
                 <div className="engine-badge">
-                    <img src={unityLogo} alt="Unity logo" className="engine-logo" />
+                    <img src="/unity-logo.png" alt="Unity logo" className="engine-logo" />
                     <span className="engine-text">Unity</span>
                 </div>
             </div>
@@ -91,7 +90,7 @@ export default function KimgsburgerUnity() {
             {/* Buttons */}
             <div className="btn-row">
                 <a
-                    href="/src/assets/builds/kimgsburger-unity-build.zip"
+                    href="builds/kimgsburger-unity-build.zip"
                     download
                     className="download-btn"
                 >
@@ -114,7 +113,7 @@ export default function KimgsburgerUnity() {
                     {screenshots.map((s, i) => (
                         <img
                             key={i}
-                            src={`/src/assets/unity/kimgsburger-unity/${s}`}
+                            src={`/unity/kimgsburger-unity/${s}`}
                             alt={`Screenshot ${i + 1}`}
                             onClick={() => setLightboxIndex(i)}
                         />
@@ -137,7 +136,7 @@ export default function KimgsburgerUnity() {
                         ‹
                     </button>
                     <img
-                        src={`/src/assets/unity/kimgsburger-unity/${screenshots[lightboxIndex]}`}
+                        src={`/unity/kimgsburger-unity/${screenshots[lightboxIndex]}`}
                         alt={`Screenshot ${lightboxIndex + 1}`}
                     />
                     <button

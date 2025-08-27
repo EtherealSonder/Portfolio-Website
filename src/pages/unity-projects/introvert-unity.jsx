@@ -1,7 +1,6 @@
 ﻿// src/pages/unity-projects/introvert-unity.jsx
 import React, { useState } from 'react'
 import './unitygamepage.css'
-import unityLogo from '../../assets/unity-logo.png'
 
 const TAG_COLORS = {
     'C#': 'tag-blue',
@@ -58,7 +57,7 @@ export default function IntrovertUnity() {
             <div className="page-header">
                 <h1>{title}</h1>
                 <div className="engine-badge">
-                    <img src={unityLogo} alt="Unity logo" className="engine-logo" />
+                    <img src="/unity-logo.png" alt="Unity logo" className="engine-logo" />
                     <span className="engine-text">Unity</span>
                 </div>
             </div>
@@ -81,7 +80,7 @@ export default function IntrovertUnity() {
 
             {/* Download button */}
             <a
-                href="/src/assets/builds/introvert-unity-build.zip"
+                href="/builds/introvert-unity-build.zip"
                 download
                 className="download-btn"
             >
@@ -104,7 +103,7 @@ export default function IntrovertUnity() {
                     {screenshots.map((s, i) => (
                         <img
                             key={i}
-                            src={`/src/assets/unity/introvert-unity/${s}`}
+                            src={`/unity/introvert-unity/${s}`}
                             alt={`Screenshot ${i + 1}`}
                             onClick={() => setLightboxIndex(i)}
                         />
@@ -132,7 +131,7 @@ export default function IntrovertUnity() {
                         ‹
                     </button>
                     <img
-                        src={`/src/assets/unity/introvert-unity/${screenshots[lightboxIndex]}`}
+                        src={`/unity/introvert-unity/${screenshots[lightboxIndex]}`}
                         alt={`Screenshot ${lightboxIndex + 1}`}
                     />
                     <button

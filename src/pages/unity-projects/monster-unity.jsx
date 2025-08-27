@@ -1,7 +1,6 @@
 ﻿// src/pages/unity-projects/monster-unity.jsx
 import React, { useState } from 'react'
 import './unitygamepage.css'
-import unityLogo from '../../assets/unity-logo.png'
 
 const TAG_COLORS = {
     'C#': 'tag-blue',
@@ -70,7 +69,7 @@ export default function MonsterUnity() {
             <div className="page-header">
                 <h1>{title}</h1>
                 <div className="engine-badge">
-                    <img src={unityLogo} alt="Unity logo" className="engine-logo" />
+                    <img src="/unity-logo.png" alt="Unity logo" className="engine-logo" />
                     <span className="engine-text">Unity</span>
                 </div>
             </div>
@@ -94,7 +93,7 @@ export default function MonsterUnity() {
             {/* Buttons */}
             <div className="btn-row">
                 <a
-                    href="/src/assets/builds/monster-unity-build.zip"
+                    href="/builds/monster-unity-build.zip"
                     download
                     className="download-btn"
                 >
@@ -119,7 +118,7 @@ export default function MonsterUnity() {
                     {screenshots.map((s, i) => (
                         <img
                             key={i}
-                            src={`/src/assets/unity/monster-unity/${s}`}
+                            src={`/unity/monster-unity/${s}`}
                             alt={`Screenshot ${i + 1}`}
                             onClick={() => setLightboxIndex(i)}
                         />
@@ -142,7 +141,7 @@ export default function MonsterUnity() {
                         ‹
                     </button>
                     <img
-                        src={`/src/assets/unity/monster-unity/${screenshots[lightboxIndex]}`}
+                        src={`/unity/monster-unity/${screenshots[lightboxIndex]}`}
                         alt={`Screenshot ${lightboxIndex + 1}`}
                     />
                     <button

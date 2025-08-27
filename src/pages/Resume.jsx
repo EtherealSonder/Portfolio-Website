@@ -1,6 +1,5 @@
 import React from 'react'
 import '../styles/Resume.css'
-import resumePdf from '../assets/Gunabalan-Lingam-Resume.pdf'
 
 export default function Resume() {
     return (
@@ -9,14 +8,14 @@ export default function Resume() {
                 {/* Embedded PDF */}
                 <object
                     className="resume-viewer"
-                    data={resumePdf}
+                    data="/Gunabalan-Lingam-Resume.pdf"
                     type="application/pdf"
                     aria-label="Resume PDF"
                 >
                     {/* Fallback if the browser cannot render PDFs */}
                     <div className="resume-fallback">
                         <p>Your browser can’t display the PDF. You can download it below.</p>
-                        <a className="resume-download" href={resumePdf} download>
+                        <a className="resume-download" href="/Gunabalan-Lingam-Resume.pdf" download>
                             Download Resume
                         </a>
                     </div>
@@ -25,7 +24,7 @@ export default function Resume() {
 
             {/* Bottom download button */}
             <div className="resume-actions">
-                <a className="resume-download" href={resumePdf} download>
+                <a className="resume-download" href="/Gunabalan-Lingam-Resume.pdf" download>
                     Download Resume
                 </a>
             </div>

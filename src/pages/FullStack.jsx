@@ -1,19 +1,6 @@
 ﻿import React, { useEffect, useMemo, useState } from 'react'
 import '../styles/FullStack.css'
 
-// arrows
-import arrowLeft from '../assets/arrow-left.png'
-import arrowRight from '../assets/arrow-right.png'
-
-// Lupiq slideshow media
-import lupiq1 from '../assets/lupiq-1.png'
-import lupiq2 from '../assets/lupiq-2.gif'
-import lupiq3 from '../assets/lupiq-3.gif'
-import lupiq4 from '../assets/lupiq-4.gif'
-import lupiq5 from '../assets/lupiq-5.png'
-
-// GreyLupa single image
-import greylupa1 from '../assets/greylupa-1.png'
 
 // Consistent colors for pills
 const TAG_COLORS = {
@@ -36,7 +23,7 @@ const TAG_COLORS = {
 const CARDS = [
     {
         title: 'Lupiq',
-        coverSet: [lupiq1, lupiq2, lupiq3, lupiq4, lupiq5],
+        coverSet: ['/lupiq-1.png', '/lupiq-2.gif', '/lupiq-3.gif', '/lupiq-4.gif', '/lupiq-5.png'],
         description:
             'Developed for the AI SaaS startup GreyLupa, Lupiq is an AI-powered resume screening platform that automatically parses and evaluates resumes against job profiles. It provides recruiters with a sortable dashboard, detailed candidate views, and analytics on applicant quality. The system scores each candidate, highlights strengths and weaknesses, and supports CSV/PDF exports for quick reporting. Its flagship feature is AskLupiq — a smart NLP assistant for reviewing candidates.',
         tags: ['React', 'TailwindCSS', 'JavaScript', 'Python', 'PostgreSQL', 'AWS'],
@@ -45,7 +32,7 @@ const CARDS = [
     },
     {
         title: 'GreyLupa Website',
-        coverSet: [greylupa1],
+        coverSet: ['/greylupa-1.png'],
         description:
             'I built the GreyLupa website as a modern, animated SPA showcasing the company’s AI products and philosophy. The stack includes React + Vite with TypeScript, SCSS modules, and animation via Framer Motion/GSAP. Features: fullscreen video intro, scroll-driven section transitions, responsive layouts, and a validated EmailJS contact form. Deployed on Vercel with custom domain and Zoho Mail.',
         tags: ['React', 'Vite', 'TypeScript', 'SCSS', 'EmailJS'],
@@ -87,7 +74,7 @@ export default function FullStack() {
         <section className="fullstack-wrap" aria-label="Full Stack projects">
             <div className="fs-carousel">
                 <button className="fs-arrow left" onClick={goPrev} aria-label="Previous">
-                    <img src={arrowLeft} alt="" />
+                    + <img src="/arrow-left.png" alt="" />
                 </button>
 
                 {/* key on article triggers the fade/slide when index changes */}
@@ -123,7 +110,7 @@ export default function FullStack() {
                 </article>
 
                 <button className="fs-arrow right" onClick={goNext} aria-label="Next">
-                    <img src={arrowRight} alt="" />
+                    + <img src="/arrow-right.png" alt="" />
                 </button>
             </div>
 

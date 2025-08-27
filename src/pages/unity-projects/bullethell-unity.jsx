@@ -1,7 +1,6 @@
 ﻿// src/pages/unity-projects/bullethell-unity.jsx
 import React, { useState } from 'react'
 import './unitygamepage.css'
-import unityLogo from '../../assets/unity-logo.png'
 
 const TAG_COLORS = {
     'C#': 'tag-blue',
@@ -42,7 +41,7 @@ export default function BulletHellUnity() {
             <div className="page-header">
                 <h1>{title}</h1>
                 <div className="engine-badge">
-                    <img src={unityLogo} alt="Unity logo" className="engine-logo" />
+                    <img src="/unity-logo.png" alt="Unity logo" className="engine-logo" />
                     <span className="engine-text">Unity</span>
                 </div>
             </div>
@@ -65,7 +64,7 @@ export default function BulletHellUnity() {
 
             {/* Download button */}
             <a
-                href="/src/assets/builds/bullethell-unity-build.zip"
+                href="/builds/bullethell-unity-build.zip"
                 download
                 className="download-btn"
             >
@@ -79,7 +78,7 @@ export default function BulletHellUnity() {
                     {screenshots.map((s, i) => (
                         <img
                             key={i}
-                            src={`/src/assets/unity/bullethell-unity/${s}`}
+                            src={`/unity/bullethell-unity/${s}`}
                             alt={`Screenshot ${i + 1}`}
                             onClick={() => setLightboxIndex(i)}
                         />
@@ -102,7 +101,7 @@ export default function BulletHellUnity() {
                         ‹
                     </button>
                     <img
-                        src={`/src/assets/unity/bullethell-unity/${screenshots[lightboxIndex]}`}
+                        src={`/unity/bullethell-unity/${screenshots[lightboxIndex]}`}
                         alt={`Screenshot ${lightboxIndex + 1}`}
                     />
                     <button

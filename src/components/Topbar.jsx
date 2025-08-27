@@ -2,10 +2,6 @@ import React, { useState } from 'react'
 import '../styles/Topbar.css'
 import { useNavigate, useLocation } from 'react-router-dom'
 
-import logo from '../assets/logo.png'
-import githubLogo from '../assets/github-logo.png'
-import linkedinLogo from '../assets/linkedin-logo.png'
-
 const mainNav = [
     { label: 'Game Projects', route: '/projects' },
     { label: 'Full Stack', route: '/fullstack' },
@@ -25,7 +21,7 @@ export default function Topbar() {
         <>
             <nav className="topbar">
                 <img
-                    src={logo}
+                    src="/logo.png"
                     alt="logo"
                     className="nav-logo nav-item"
                     onClick={() => navigate('/')}
@@ -59,16 +55,21 @@ export default function Topbar() {
 
                 <div className="nav-icons desktop-only">
                     <img
-                        src={githubLogo}
+                        src="/github-logo.png"
                         alt="GitHub"
                         className="nav-icon nav-item"
                         onClick={() => window.open('https://github.com/EtherealSonder', '_blank')}
                     />
                     <img
-                        src={linkedinLogo}
+                        src="/linkedin-logo.png"
                         alt="LinkedIn"
                         className="nav-icon nav-item"
-                        onClick={() => window.open('https://www.linkedin.com/in/gunabalan-lingam-432b54186/', '_blank')}
+                        onClick={() =>
+                            window.open(
+                                'https://www.linkedin.com/in/gunabalan-lingam-432b54186/',
+                                '_blank'
+                            )
+                        }
                     />
                 </div>
 
@@ -101,7 +102,12 @@ export default function Topbar() {
                     </div>
                     <div
                         className="side-link"
-                        onClick={() => window.open('https://www.linkedin.com/in/gunabalan-lingam-432b54186/', '_blank')}
+                        onClick={() =>
+                            window.open(
+                                'https://www.linkedin.com/in/gunabalan-lingam-432b54186/',
+                                '_blank'
+                            )
+                        }
                     >
                         LinkedIn
                     </div>

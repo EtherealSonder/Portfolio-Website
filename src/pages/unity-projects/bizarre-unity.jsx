@@ -1,7 +1,6 @@
 ﻿// src/pages/unity-projects/bizarre-unity.jsx
 import React, { useState } from 'react'
 import './unitygamepage.css'
-import unityLogo from '../../assets/unity-logo.png'
 
 const TAG_COLORS = {
     'C#': 'tag-blue',
@@ -64,7 +63,7 @@ export default function BizarreUnity() {
             <div className="page-header">
                 <h1>{title}</h1>
                 <div className="engine-badge">
-                    <img src={unityLogo} alt="Unity logo" className="engine-logo" />
+                    <img src="/unity-logo.png" alt="Unity logo" className="engine-logo" />
                     <span className="engine-text">Unity</span>
                 </div>
             </div>
@@ -88,7 +87,7 @@ export default function BizarreUnity() {
             {/* Buttons */}
             <div className="btn-row">
                 <a
-                    href="/src/assets/builds/bizarre-unity-build.zip"
+                    href="/builds/bizarre-unity-build.zip"
                     download
                     className="download-btn"
                 >
@@ -111,7 +110,7 @@ export default function BizarreUnity() {
                     {screenshots.map((s, i) => (
                         <img
                             key={i}
-                            src={`/src/assets/unity/bizarre-unity/${s}`}
+                            src={`/unity/bizarre-unity/${s}`}
                             alt={`Screenshot ${i + 1}`}
                             onClick={() => setLightboxIndex(i)}
                         />
@@ -134,7 +133,7 @@ export default function BizarreUnity() {
                         ‹
                     </button>
                     <img
-                        src={`/src/assets/unity/bizarre-unity/${screenshots[lightboxIndex]}`}
+                        src={`unity/bizarre-unity/${screenshots[lightboxIndex]}`}
                         alt={`Screenshot ${lightboxIndex + 1}`}
                     />
                     <button

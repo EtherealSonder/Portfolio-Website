@@ -1,6 +1,5 @@
 ﻿import React, { useState } from 'react'
 import './unitygamepage.css'
-import unityLogo from '../../assets/unity-logo.png'
 
 const TAG_COLORS = {
     'C#': 'tag-blue',
@@ -74,7 +73,7 @@ export default function HarpyUnity() {
             <div className="page-header">
                 <h1>{title}</h1>
                 <div className="engine-badge">
-                    <img src={unityLogo} alt="Unity logo" className="engine-logo" />
+                    <img src="/unity-logo.png" alt="Unity logo" className="engine-logo" />
                     <span className="engine-text">Unity</span>
                 </div>
             </div>
@@ -97,7 +96,7 @@ export default function HarpyUnity() {
 
             {/* Download button */}
             <a
-                href="/src/assets/builds/harpy-unity-build.zip"
+                href="/builds/harpy-unity-build.zip"
                 download
                 className="download-btn"
             >
@@ -111,7 +110,7 @@ export default function HarpyUnity() {
                     {screenshots.map((s, i) => (
                         <img
                             key={i}
-                            src={`/src/assets/unity/harpy-unity/${s}`}
+                            src={`/unity/harpy-unity/${s}`}
                             alt={`Screenshot ${i + 1}`}
                             onClick={() => setLightboxIndex(i)}
                         />
@@ -134,7 +133,7 @@ export default function HarpyUnity() {
                         ‹
                     </button>
                     <img
-                        src={`/src/assets/unity/harpy-unity/${screenshots[lightboxIndex]}`}
+                        src={`/unity/harpy-unity/${screenshots[lightboxIndex]}`}
                         alt={`Screenshot ${lightboxIndex + 1}`}
                     />
                     <button

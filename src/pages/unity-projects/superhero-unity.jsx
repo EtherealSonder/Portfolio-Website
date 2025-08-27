@@ -1,7 +1,6 @@
 ﻿// src/pages/unity-projects/superhero-unity.jsx
 import React, { useState } from 'react'
 import './unitygamepage.css'
-import unityLogo from '../../assets/unity-logo.png'
 
 const TAG_COLORS = {
     'C#': 'tag-blue',
@@ -85,7 +84,7 @@ export default function SuperheroUnity() {
             <div className="page-header">
                 <h1>{title}</h1>
                 <div className="engine-badge">
-                    <img src={unityLogo} alt="Unity logo" className="engine-logo" />
+                    <img src="/unity-logo.png" alt="Unity logo" className="engine-logo" />
                     <span className="engine-text">Unity</span>
                 </div>
             </div>
@@ -108,7 +107,7 @@ export default function SuperheroUnity() {
 
             {/* Download button */}
             <a
-                href="/src/assets/builds/superhero-unity-build.zip"
+                href="/builds/superhero-unity-build.zip"
                 download
                 className="download-btn"
             >
@@ -131,7 +130,7 @@ export default function SuperheroUnity() {
                     {screenshots.map((s, i) => (
                         <img
                             key={i}
-                            src={`/src/assets/unity/superhero-unity/${s}`}
+                            src={`/unity/superhero-unity/${s}`}
                             alt={`Screenshot ${i + 1}`}
                             onClick={() => setLightboxIndex(i)}
                         />
@@ -156,7 +155,7 @@ export default function SuperheroUnity() {
                         ‹
                     </button>
                     <img
-                        src={`/src/assets/unity/superhero-unity/${screenshots[lightboxIndex]}`}
+                        src={`/unity/superhero-unity/${screenshots[lightboxIndex]}`}
                         alt={`Screenshot ${lightboxIndex + 1}`}
                     />
                     <button

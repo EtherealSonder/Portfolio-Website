@@ -1,8 +1,6 @@
 import React, { useState, useCallback, useEffect, useRef } from 'react'
 import './unity.css'
 import { UNITY_GAMES } from '../../data/games.unity'
-import arrowLeft from '../../assets/arrow-left.png'
-import arrowRight from '../../assets/arrow-right.png'
 
 // Map tag text -> css class, so colors stay consistent across cards
 const TAG_COLORS = {
@@ -72,7 +70,7 @@ export default function Unity() {
         <section className="unity-wrap" ref={rootRef} tabIndex={0} aria-label="Unity projects">
             <div className="carousel-container">
                 <button className="arrow left" onClick={goPrev} aria-label="Previous">
-                    <img src={arrowLeft} alt="Previous" />
+                     <img src="/arrow-left.png" alt="Previous" />
                 </button>
 
                 {/* key on article triggers the fade/slide when index changes */}
@@ -113,7 +111,7 @@ export default function Unity() {
                 </article>
 
                 <button className="arrow right" onClick={goNext} aria-label="Next">
-                    <img src={arrowRight} alt="Next" />
+                     <img src="/arrow-right.png" alt="Next" />
                 </button>
             </div>
 
