@@ -22,7 +22,8 @@ import BrothersUnity from "./pages/unity-projects/brothers-unity";
 import EquivalentrationsUnity from "./pages/unity-projects/equivalentrations-unity";
 import BullethellUnity from "./pages/unity-projects/bullethell-unity";
 import Contact from "./pages/Contact";
-
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 export default function App() {
     return (
         <Router>
