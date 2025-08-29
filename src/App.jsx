@@ -55,10 +55,11 @@ export default function App() {
                 <Route path="/resume" element={<Resume />} />
                 <Route path="/contact" element={<Contact />} />
 
-                <Analytics />
-                <SpeedInsights />
-                {/* Add later: <Route path="/fullstack" />, <Route path="/aiprojects" />, etc. */}
+                
             </Routes>
+
+            <Analytics />
+            <SpeedInsights />
         </Router>
     )
 }
