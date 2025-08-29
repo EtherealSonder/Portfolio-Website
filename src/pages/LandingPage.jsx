@@ -25,7 +25,7 @@ export default function LandingPage() {
 
     return (
         <div className="landing-container">
-            <video className="landing-video" autoPlay loop muted playsInline>
+            <video className="landing-video" autoPlay loop muted playsInline preload="auto" poster="/videos/landing-poster.jpg">
                 <source src="/videos/landingpagebg.webm" type="video/webm" />
             </video>
 

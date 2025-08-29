@@ -109,6 +109,8 @@
 
     .hamburger {
         display: flex;
+        margin-left: auto;
+        cursor: pointer;
     }
 }
 
